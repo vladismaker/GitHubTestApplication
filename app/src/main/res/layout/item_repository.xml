@@ -21,7 +21,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="60dp"/>
             <TextView
                 android:id="@+id/repoForksCountTextView"
                 android:layout_width="wrap_content"
