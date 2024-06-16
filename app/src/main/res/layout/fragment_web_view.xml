@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.view.WebViewFragment"
+    android:background="@color/white">
+
+    <WebView
+        android:id="@+id/content_from_file"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_progress_bar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_speed="1.5"
+        app:lottie_rawRes="@raw/progress_bar"
+        android:layout_gravity="center"
+        android:visibility="visible"/>
+    <LinearLayout
+        android:id="@+id/layout_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:gravity="center"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/text_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/gray"/>
+        <TextView
+            android:id="@+id/button_try_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/try_again"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/light_gray"/>
+    </LinearLayout>
+</FrameLayout>

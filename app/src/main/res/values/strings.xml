@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GitHubTestApplication</string>
+
+    <string name="sign_folder">dir</string>
+    <string name="html_url_key">htmlUrlKey</string>
+    <string name="no_internet">Нет интернета</string>
+    <string name="loading_error">Неккоректная ссылка, ошибка загрузки</string>
+    <string name="try_again">TRY AGAIN</string>
+    <string name="enter_request">Введите запрос</string>
+</resources>
