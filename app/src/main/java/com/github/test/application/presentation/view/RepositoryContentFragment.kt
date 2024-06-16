@@ -52,9 +52,9 @@ class RepositoryContentFragment : Fragment() {
         viewModelRepositoryContent.isLoading.observe(viewLifecycleOwner) {
             // Обновление UI в зависимости от состояния загрузки
             if (it) {
-                binding.lottieProgressBar.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.VISIBLE
             } else {
-                binding.lottieProgressBar.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
             }
         }
 
@@ -88,7 +88,7 @@ class RepositoryContentFragment : Fragment() {
 
     private fun setListeners(){
         binding.buttonTryAgain.setOnClickListener{
-            binding.lottieProgressBar.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
             viewModelRepositoryContent.checkInternet()
         }
 
@@ -141,7 +141,7 @@ class RepositoryContentFragment : Fragment() {
 
     private fun showError(textError:String){
         //Убираем загрузку
-        binding.lottieProgressBar.visibility = View.GONE
+        binding.progressBar.visibility = View.GONE
         //Показываем ошибку
         binding.layoutError.visibility = View.VISIBLE
         binding.textError.text = textError

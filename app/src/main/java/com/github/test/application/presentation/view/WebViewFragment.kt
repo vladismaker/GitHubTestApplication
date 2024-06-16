@@ -34,6 +34,7 @@ class WebViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.progressBar.visibility = View.VISIBLE
         viewModelWebView.checkInternet()
 
         val htmlUrl = arguments?.getString(getString(R.string.html_url_key))
@@ -42,7 +43,7 @@ class WebViewFragment : Fragment() {
             if (it) {
                 binding.layoutError.visibility = View.GONE
                 //Интернет есть
-                binding.contentFromFile.webViewClient = webViewClient(binding.contentFromFile, binding.lottieProgressBar)
+                binding.contentFromFile.webViewClient = webViewClient(binding.contentFromFile)
 
                 if (htmlUrl!= null){
                     //Ссылка есть
@@ -63,17 +64,17 @@ class WebViewFragment : Fragment() {
         }
 
         binding.buttonTryAgain.setOnClickListener{
-            binding.lottieProgressBar.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
             viewModelWebView.checkInternet()
         }
     }
 
-    private fun webViewClient(contentFileWebView:WebView, lottieProgressBar:LottieAnimationView): WebViewClient {
+    private fun webViewClient(contentFileWebView:WebView): WebViewClient {
         return object : WebViewClient() {
             override fun onPageCommitVisible(viewCoPeen: WebView, urlCoPeen: String) {
                 super.onPageCommitVisible(viewCoPeen, urlCoPeen)
                 contentFileWebView.visibility = View.VISIBLE
-                lottieProgressBar.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
             }
 
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
@@ -98,7 +99,7 @@ class WebViewFragment : Fragment() {
 
     private fun showError(textError:String){
         //Убираем загрузку
-        binding.lottieProgressBar.visibility = View.GONE
+        binding.progressBar.visibility = View.GONE
         //Показываем ошибку
         binding.layoutError.visibility = View.VISIBLE
         binding.textError.text = textError

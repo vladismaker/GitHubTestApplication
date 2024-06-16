@@ -63,9 +63,9 @@ class SearchUsersAndRepositoriesFragment : Fragment() {
         viewModelSearch.isLoading.observe(viewLifecycleOwner){
             // Обновление UI в зависимости от состояния загрузки
             if (it){
-                binding.lottieProgressBar.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.VISIBLE
             }else{
-                binding.lottieProgressBar.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
             }
         }
 
@@ -77,7 +77,7 @@ class SearchUsersAndRepositoriesFragment : Fragment() {
         viewModelSearch.isInternet.observe(viewLifecycleOwner) {
             if (it) {
                 binding.layoutError.visibility = View.GONE
-                binding.lottieProgressBar.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
                 if (querySearch.length>=3){
                     viewModelSearch.performSearch(querySearch)
                 }
@@ -90,7 +90,7 @@ class SearchUsersAndRepositoriesFragment : Fragment() {
 
     private fun setListeners(){
         binding.buttonTryAgain.setOnClickListener{
-            binding.lottieProgressBar.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
             viewModelSearch.checkInternet()
         }
 
@@ -125,7 +125,7 @@ class SearchUsersAndRepositoriesFragment : Fragment() {
 
     private fun showError(textError:String){
         //Убираем загрузку
-        binding.lottieProgressBar.visibility = View.GONE
+        binding.progressBar.visibility = View.GONE
         //Показываем ошибку
         binding.layoutError.visibility = View.VISIBLE
         binding.textError.text = textError
