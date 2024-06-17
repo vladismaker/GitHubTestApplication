@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-/*    id("com.android.application")
-    kotlin("android")*/
     id("com.google.dagger.hilt.android")
     id("kotlin-kapt")
 }
@@ -64,16 +62,6 @@ dependencies {
 
     implementation ("com.squareup.picasso:picasso:2.8")
 
-    implementation ("com.airbnb.android:lottie:6.1.0")
-
-    /*implementation("com.google.dagger:hilt-android:2.38.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.38.1")*/
     implementation ("com.google.dagger:hilt-android:2.51.1")
     kapt ("com.google.dagger:hilt-compiler:2.51.1")
 }
-
-/*
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
-}*/
