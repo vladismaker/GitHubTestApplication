@@ -26,7 +26,7 @@ class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         itemView.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(user.html_url))
-            itemView.context.startActivity(intent)
+            itemView.context.startActivity(Intent.createChooser(intent, "Browse with"))
         }
     }
 }

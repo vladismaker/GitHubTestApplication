@@ -54,11 +54,11 @@ class SearchUsersAndRepositoriesViewModel @Inject constructor(
                     }
                     is SealedResponse.ErrorMessage -> {
                         val errorMessage  =  "Error: ${results.errorMessage}"
-                        _errorMessage.value = errorMessage
+                        _errorMessage.postValue(errorMessage)
                     }
                 }
-            } catch (e: Exception) {
-                _errorMessage.value = "An error occurred: ${e.message}"
+            } catch (error: Exception) {
+                _errorMessage.postValue("Error: ${error.message}")
             } finally {
                 _isLoading.postValue(false)
             }

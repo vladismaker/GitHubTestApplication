@@ -26,18 +26,6 @@
             android:paddingVertical="10dp"/>
     </LinearLayout>
 
-
-<!--    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie_progress_bar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_speed="1.5"
-        app:lottie_rawRes="@raw/progress_bar"
-        android:layout_gravity="center"
-        android:visibility="gone"/>-->
-
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
@@ -58,7 +46,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/gray"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"/>
         <TextView
             android:id="@+id/button_try_again"
             android:layout_width="wrap_content"

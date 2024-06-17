@@ -66,12 +66,11 @@ class RepositoryContentViewModel @Inject constructor(
                     }
                     is SealedResponse.ErrorMessage -> {
                         val errorMessage  =  "Error: ${results.errorMessage}"
-                        _errorMessage.value = errorMessage
+                        _errorMessage.postValue(errorMessage)
                     }
                 }
-
             } catch (error: Throwable) {
-                _errorMessage.value = "Error: ${error.message}"
+                _errorMessage.postValue("Error: ${error.message}")
             } finally {
                 _isLoading.postValue(false)
             }
