@@ -6,5 +6,5 @@
         <item name="android:textColorHint">@color/light_gray</item>
     </style>
 
-    <style name="Theme.GitHubTestApplication" parent="Base.Theme.GitHubTestApplication" />
+    <style name="Theme.GitHubTestApplication" parent="AppTheme" />
 </resources>
