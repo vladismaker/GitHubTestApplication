@@ -11,7 +11,6 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.airbnb.lottie.LottieAnimationView
 import com.github.test.application.R
 import com.github.test.application.databinding.FragmentWebViewBinding
 import com.github.test.application.presentation.viewmodel.WebViewViewModel
